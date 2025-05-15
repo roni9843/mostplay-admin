@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaArrowLeft, FaSync, FaEdit, FaChevronDown, FaUser, FaCreditCard, FaMoneyBillWave, FaClock, FaFile, FaExclamation } from 'react-icons/fa';
 import styled from 'styled-components';
-import { baseURL } from '../utils/baseURL';
+import { baseURL, baseURL_For_IMG_UPLOAD } from '../utils/baseURL';
 
 // Styled Components (Reusing from TransactionDetails)
 const DashboardContainer = styled.div`
@@ -617,7 +617,7 @@ export default function SingleWithdrawTransaction() {
                     <p><strong>Gateway:</strong> {transaction.paymentMethod.gateway || 'Not Specified'}</p>
                     {transaction.paymentMethod.methodImage && (
                       <img
-                        src={transaction.paymentMethod.methodImage}
+                        src={`${baseURL_For_IMG_UPLOAD}s/${transaction.paymentMethod.methodImage}`}
                         alt="Payment Method"
                         onError={(e) => (e.target.style.display = 'none')}
                       />
@@ -653,7 +653,7 @@ export default function SingleWithdrawTransaction() {
                   <DetailValue>
                     {input.type === 'file' ? (
                       <img
-                        src={input.value}
+                        src={`${baseURL_For_IMG_UPLOAD}s/${input.value}`}
                         alt={input.label || 'User Input File'}
                         onError={(e) => (e.target.style.display = 'none')}
                       />

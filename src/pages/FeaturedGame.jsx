@@ -363,7 +363,7 @@ export default function FeaturedGame() {
         <GameList>
           {games.items.map((item) => (
             <GameCard key={item._id}>
-              <GameImage src={item.image} alt={item.title} />
+              <GameImage src={`${baseURL_For_IMG_UPLOAD}s/${item.image}`} alt={item.title} />
               <GameInfo>
                 <p><strong>Title:</strong> {item.title}</p>
                 <p><strong>Title (Bangla):</strong> {item.titleBD}</p>

@@ -709,7 +709,7 @@ const AddWithdrawMethods = () => {
               onChange={(e) => handleFileChange(e, 'methodImage')}
               error={errors.methodImage}
             />
-            {formData.methodImage && <ImagePreview src={formData.methodImage} alt="Method Preview" />}
+            {formData.methodImage && <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${formData.methodImage}`} alt="Method Preview" />}
             {errors.methodImage && <ErrorText>{errors.methodImage}</ErrorText>}
           </InputGroup>
           <InputGroup>
@@ -1072,7 +1072,7 @@ const AddWithdrawMethods = () => {
           <MethodsGrid>
             {withdrawPaymentMethods.map((method) => (
               <MethodCard key={method._id}>
-                <MethodImage src={method.methodImage} alt={method.methodName} />
+                <MethodImage src={`${baseURL_For_IMG_UPLOAD}s/${method.methodImage}`} alt={method.methodName} />
                 <h3 className="text-lg font-medium text-gray-900">{method.methodName}</h3>
                 <p className="text-sm text-gray-600">Status: {method.status}</p>
                 <p className="text-sm text-gray-600">Gateways: {method.gateway.join(', ')}</p>

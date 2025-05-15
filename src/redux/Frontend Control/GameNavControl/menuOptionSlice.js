@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { selectToken } from '../../auth/authSlice';
+import { baseURL } from '../../../utils/baseURL';
 
-const API = 'http://localhost:8000/api/v1/admin';
+// const API = 'http://localhost:8000/api/v1/admin';
+
 // Thunks
 export const fetchMenuOptions = createAsyncThunk(
   'menuOption/fetchMenuOptions',
   async (_, { getState }) => {
     const token = selectToken(getState());
-    const response = await fetch(`${API}/menu`, {
+    const response = await fetch(`${baseURL}/menu`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -21,7 +23,7 @@ export const createMenuOption = createAsyncThunk(
   'menuOption/createMenuOption',
   async (data, { getState }) => {
     const token = selectToken(getState());
-    const response = await fetch(`${API}/menu`, {
+    const response = await fetch(`${baseURL}/menu`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -38,7 +40,7 @@ export const updateMenuOption = createAsyncThunk(
   'menuOption/updateMenuOption',
   async ({ id, data }, { getState }) => {
     const token = selectToken(getState());
-    const response = await fetch(`${API}/menu/${id}`, {
+    const response = await fetch(`${baseURL}/menu/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -55,7 +57,7 @@ export const deleteMenuOption = createAsyncThunk(
   'menuOption/deleteMenuOption',
   async (id, { getState }) => {
     const token = selectToken(getState());
-    await fetch(`${API}/menu/${id}`, {
+    await fetch(`${baseURL}/menu/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,

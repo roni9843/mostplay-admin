@@ -12,6 +12,7 @@ import {
 import { uploadImage } from '../../redux/Frontend Control/GameNavControl/imageSlice';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { baseURL_For_IMG_UPLOAD } from '../../utils/baseURL';
 
 // Styled Components
 const Container = styled.div`
@@ -332,7 +333,7 @@ const MenuOptionManager = () => {
             />
           </FileInputWrapper>
           {form.image && (
-            <ImagePreview src={form.image} alt="Preview" width={60} height={60} />
+            <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${form.image}`} alt="Preview" width={60} height={60} />
           )}
         </InputWrapper>
         <div className="col-12 text-center">
@@ -360,7 +361,7 @@ const MenuOptionManager = () => {
                 <strong style={{ color: '#343a40', fontWeight: 'bold' }}>{item.title}</strong>
                 <strong style={{ color: '#343a40', fontWeight: 'bold', marginLeft: '10px' }}>{item.titleBD}</strong>
                 {item.image && (
-                  <CardImage src={item.image} alt={item.title} width={40} height={40} />
+                  <CardImage src={`${baseURL_For_IMG_UPLOAD}s/${item.image}`} alt={item.title} width={40} height={40} />
                 )}
               </div>
               <div className="mt-2">

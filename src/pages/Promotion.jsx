@@ -696,7 +696,7 @@ export default function Promotion() {
       <PromotionGrid>
         {(promotions || []).map((promotion) => (
           <PromotionCard key={promotion._id}>
-            <PromotionImage src={promotion.img} alt={promotion.title} />
+            <PromotionImage src={`${baseURL_For_IMG_UPLOAD}s/${promotion.img}`} alt={promotion.title} />
             <CardTitle>{promotion.title}</CardTitle>
             <CardText>
               Game Type:{' '}

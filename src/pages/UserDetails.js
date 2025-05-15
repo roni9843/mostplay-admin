@@ -5,6 +5,7 @@ import { getUserInfo } from '../redux/userFrontend/userFrontendAPI';
 import styled from 'styled-components';
 import { FaUser, FaEnvelope, FaPhone, FaGlobe, FaMoneyBill, FaEdit, FaUserShield, FaChartLine, FaChevronRight } from 'react-icons/fa';
 import UserDetailsEditProfile from './../components/userDetailsEditProfile/userDetailsEditProfile';
+import { baseURL_For_IMG_UPLOAD } from '../utils/baseURL';
 
 // Styled Components
 const DashboardContainer = styled.div`
@@ -309,6 +310,17 @@ export default function UserDetails() {
     dispatch(getUserInfo(userId));
   }, [dispatch, userId]);
 
+
+  
+  useEffect(()=>{
+
+    console.log(`${baseURL_For_IMG_UPLOAD}s/${userInfo?.profileImage}`);
+    
+
+  },[baseURL_For_IMG_UPLOAD,userInfo])
+
+
+
   const handleEditProfile = () => {
     setIsEditing(true);
   };
@@ -346,7 +358,7 @@ export default function UserDetails() {
               <FaUser className="text-xl" />
             ) : (
               <img
-                src={userInfo?.profileImage}
+                src={`${baseURL_For_IMG_UPLOAD}s/${userInfo?.profileImage}`}
                 alt="Profile Image"
                 style={{ borderRadius: '50%', width: '100%', height: '100%' }}
                 onError={(e) => {

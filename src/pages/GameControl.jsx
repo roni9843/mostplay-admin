@@ -389,7 +389,7 @@ const GameControl = () => {
           <div key={game._id} className="col-md-6 col-lg-4">
             <GameCard className="card h-100">
               <GameImage
-                src={game.image}
+                src={`${baseURL_For_IMG_UPLOAD}s/${game.image}`}
                 alt={game.name}
                 onError={(e) => (e.target.src = 'https://via.placeholder.com/150')}
               />
@@ -555,7 +555,7 @@ const GameControl = () => {
                   <div>
                     <p>Current Image:</p>
                     <ImagePreview
-                      src={formData.imageUrl}
+                      src={`${baseURL_For_IMG_UPLOAD}s/${formData.imageUrl}`}
                       alt="Current game"
                       onError={(e) => (e.target.src = 'https://via.placeholder.com/150')}
                     />

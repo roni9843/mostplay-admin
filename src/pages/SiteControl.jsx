@@ -546,19 +546,19 @@ const SiteControl = () => {
           {theme.favicon && (
             <GridItem>
               <Label>Favicon</Label>
-              <ImagePreview src={theme.favicon} alt="Favicon" />
+              <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${theme.favicon}`} alt="Favicon" />
             </GridItem>
           )}
           {theme.websiteLogoWhite && (
             <GridItem>
               <Label>White Logo</Label>
-              <ImagePreview src={theme.websiteLogoWhite} alt="White Logo" />
+              <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${theme.websiteLogoWhite}`} alt="White Logo" />
             </GridItem>
           )}
           {theme.websiteLogoDark && (
             <GridItem>
               <Label>Dark Logo</Label>
-              <ImagePreview src={theme.websiteLogoDark} alt="Dark Logo" />
+              <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${theme.websiteLogoDark}`} alt="Dark Logo" />
             </GridItem>
           )}
           <GridItem style={{ gridColumn: 'span 1', justifyContent: 'center' }}>
@@ -674,7 +674,7 @@ const SiteControl = () => {
                 </div>
                 <FormLabel htmlFor="favicon">Favicon</FormLabel>
                 <div>
-                  {formData.favicon && <ImagePreview src={formData.favicon} alt="Favicon Preview" />}
+                  {formData.favicon && <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${formData.favicon}`} alt="Favicon Preview" />}
                   <Input
                     type="file"
                     id="favicon"
@@ -687,7 +687,7 @@ const SiteControl = () => {
                 <FormLabel htmlFor="websiteLogoWhite">White Logo</FormLabel>
                 <div>
                   {formData.websiteLogoWhite && (
-                    <ImagePreview src={formData.websiteLogoWhite} alt="White Logo Preview" />
+                    <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${formData.websiteLogoWhite}`} alt="White Logo Preview" />
                   )}
                   <Input
                     type="file"
@@ -701,7 +701,7 @@ const SiteControl = () => {
                 <FormLabel htmlFor="websiteLogoDark">Dark Logo</FormLabel>
                 <div>
                   {formData.websiteLogoDark && (
-                    <ImagePreview src={formData.websiteLogoDark} alt="Dark Logo Preview" />
+                    <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${formData.websiteLogoDark}`} alt="Dark Logo Preview" />
                   )}
                   <Input
                     type="file"

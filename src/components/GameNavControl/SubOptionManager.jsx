@@ -13,6 +13,7 @@ import {
 import { uploadImage } from '../../redux/Frontend Control/GameNavControl/imageSlice';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { baseURL_For_IMG_UPLOAD } from '../../utils/baseURL';
 
 // Styled Components
 const Container = styled.div`
@@ -350,7 +351,7 @@ const SubOptionManager = () => {
             />
           </FileInputWrapper>
           {form.image && (
-            <ImagePreview src={form.image} alt="Preview" width={60} height={60} />
+            <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${form.image}`} alt="Preview" width={60} height={60} />
           )}
         </InputWrapper>
         <InputWrapper className="col-md-3">
@@ -400,7 +401,7 @@ const SubOptionManager = () => {
                   </span>
                 </div>
                 {item.image && (
-                  <CardImage src={item.image} alt={item.title} width={40} height={40} />
+                  <CardImage src={`${baseURL_For_IMG_UPLOAD}s/${item.image}`} alt={item.title} width={40} height={40} />
                 )}
               </div>
               <div>

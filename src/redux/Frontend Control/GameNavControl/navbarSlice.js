@@ -1,8 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { selectToken } from '../../auth/authSlice';
+import { baseURL } from '../../../utils/baseURL';
 
-const API = 'http://localhost:8000/api/v1/admin';
+
 
 // Thunks
 export const fetchNavbar = createAsyncThunk(
@@ -10,7 +11,7 @@ export const fetchNavbar = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     const token = selectToken(getState());
     try {
-      const response = await axios.get(`${API}/navbar`, {
+      const response = await axios.get(`${baseURL}/navbar`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,7 +28,7 @@ export const createNavbar = createAsyncThunk(
   async (data, { getState, rejectWithValue }) => {
     const token = selectToken(getState());
     try {
-      const response = await axios.post(`${API}/navbar`, data, {
+      const response = await axios.post(`${baseURL}/navbar`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +45,7 @@ export const updateNavbar = createAsyncThunk(
   async (data, { getState, rejectWithValue }) => {
     const token = selectToken(getState());
     try {
-      const response = await axios.put(`${API}/navbar`, data, {
+      const response = await axios.put(`${baseURL}/navbar`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -2,7 +2,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { baseURL_For_IMG_UPLOAD } from '../../../utils/baseURL';
 
-const API = 'http://localhost:8000/api/v1/admin';
 
 // Thunk for image upload
 export const uploadImage = createAsyncThunk(

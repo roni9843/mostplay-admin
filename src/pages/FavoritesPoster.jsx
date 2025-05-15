@@ -349,7 +349,7 @@ export default function FavoritesPoster() {
           <PreviewList>
             {previewImages.map((image, index) => (
               <PreviewCard key={index}>
-                <ImageItem src={image.url} alt={`Preview ${image.fileName}`} />
+                <ImageItem src={`${baseURL_For_IMG_UPLOAD}s/${image.url}`} alt={`Preview ${image.fileName}`} />
                 <ImageInfo>{image.fileName}</ImageInfo>
                 <DeleteButton onClick={() => handleRemovePreviewImage(image.url)}>
                   Remove
@@ -367,7 +367,7 @@ export default function FavoritesPoster() {
           <ImageList>
             {poster.images.map((url, index) => (
               <ImageCard key={index}>
-                <ImageItem src={url} alt={`Poster ${index}`} />
+                <ImageItem src={`${baseURL_For_IMG_UPLOAD}s/${url}`} alt={`Poster ${index}`} />
                 <DeleteButton onClick={() => handleDeleteImage(url)}>Delete</DeleteButton>
               </ImageCard>
             ))}

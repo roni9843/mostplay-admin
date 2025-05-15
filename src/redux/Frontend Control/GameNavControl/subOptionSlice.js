@@ -1,8 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { selectToken } from '../../auth/authSlice';
+import { baseURL } from '../../../utils/baseURL';
 
-const API = 'http://localhost:8000/api/v1/admin';
+
+
 
 // Thunks
 export const fetchSubOptions = createAsyncThunk(
@@ -10,7 +12,7 @@ export const fetchSubOptions = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     try {
       const token = selectToken(getState());
-      const response = await axios.get(`${API}/submenu`, {
+      const response = await axios.get(`${baseURL}/submenu`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -27,7 +29,7 @@ export const fetchMenuOptionsForSub = createAsyncThunk(
   async (_, { getState, rejectWithValue }) => {
     try {
       const token = selectToken(getState());
-      const response = await axios.get(`${API}/menu`, {
+      const response = await axios.get(`${baseURL}/menu`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +46,7 @@ export const createSubOption = createAsyncThunk(
   async (data, { getState, rejectWithValue }) => {
     try {
       const token = selectToken(getState());
-      const response = await axios.post(`${API}/submenu`, data, {
+      const response = await axios.post(`${baseURL}/submenu`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +63,7 @@ export const updateSubOption = createAsyncThunk(
   async ({ id, data }, { getState, rejectWithValue }) => {
     try {
       const token = selectToken(getState());
-      const response = await axios.put(`${API}/submenu/${id}`, data, {
+      const response = await axios.put(`${baseURL}/submenu/${id}`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -78,7 +80,7 @@ export const deleteSubOption = createAsyncThunk(
   async (id, { getState, rejectWithValue }) => {
     try {
       const token = selectToken(getState());
-      await axios.delete(`${API}/submenu/${id}`, {
+      await axios.delete(`${baseURL}/submenu/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

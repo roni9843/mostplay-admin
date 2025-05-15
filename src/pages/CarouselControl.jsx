@@ -582,7 +582,7 @@ const handleFileChange = useCallback(
               Mobile
             </small>
             <PreviewImage
-              src={image.mobile}
+              src={`${baseURL_For_IMG_UPLOAD}s/${image.mobile}`}
               alt={`Mobile image ${index + 1}`}
             />
           </ImageContainer>
@@ -591,7 +591,7 @@ const handleFileChange = useCallback(
               Desktop
             </small>
             <PreviewImage
-              src={image.desktop}
+              src={`${baseURL_For_IMG_UPLOAD}s/${image.desktop}`}
               alt={`Desktop image ${index + 1}`}
             />
           </ImageContainer>
@@ -695,7 +695,7 @@ const handleFileChange = useCallback(
                     Mobile Preview
                   </small>
                   <PreviewImage
-                    src={mobilePreview}
+                    src={`${baseURL_For_IMG_UPLOAD}s/${mobilePreview}`}
                     alt={`Mobile preview ${index + 1}`}
                   />
                 </ImageContainer>
@@ -704,7 +704,7 @@ const handleFileChange = useCallback(
                     Desktop Preview
                   </small>
                   <PreviewImage
-                    src={previews.desktop[index]}
+                    src={`${baseURL_For_IMG_UPLOAD}s/${previews.desktop[index]}`}
                     alt={`Desktop preview ${index + 1}`}
                   />
                 </ImageContainer>

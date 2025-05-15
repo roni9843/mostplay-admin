@@ -415,7 +415,7 @@ const UserDetailsEditProfile = ({ userInfo, onCancel }) => {
             <FormLabel>Profile Image</FormLabel>
             <ImageUploadContainer>
               {imagePreview && (
-                <ImagePreview src={imagePreview} alt="Profile preview" />
+                <ImagePreview src={`${baseURL_For_IMG_UPLOAD}s/${imagePreview}`} alt="Profile preview" />
               )}
               <UploadButton
                 type="button"
