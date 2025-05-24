@@ -33,9 +33,11 @@ const AppRoutes = () => (
     <Route path="/promotion" element={<Promotion />} />
     <Route path="/Add-Deposit-Methods" element={<AddDepositMethods />} />
     <Route path="/deposit-transaction" element={<DepositTransaction />} />
+    <Route path="/deposit-transaction/filter/:filter" element={<DepositTransaction />} />
     <Route path="/transaction/:id" element={<TransactionDetails />} />
     <Route path="/Add-Withdraw-Methods" element={<AddWithdrawMethods />} />
     <Route path="/Withdraw-transaction" element={<WithdrawTransaction />} />
+    <Route path="/Withdraw-transaction/filter/:filter" element={<WithdrawTransaction />} />
     <Route path="/Withdraw-transaction/:id" element={<SingleWithdrawTransaction />} />
     <Route path="/favorites-poster-control" element={<FavoritesPoster />} />
     <Route path="/featured-game-control" element={<FeaturedGame />} />

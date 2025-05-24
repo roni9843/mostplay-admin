@@ -347,11 +347,7 @@ const MobileSidebar = ({ open, onClose, handleMenuSelect }) => {
             </SubMenu>
 
             <SubMenu label="Frontend Control" icon={<FaSlidersH size={16} />}>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/logo-favicon">
-                <MenuItem icon={<FaImage size={16} />} onClick={() => onMenuSelect('Logo & Favicon')}>
-                  Logo & Favicon
-                </MenuItem>
-              </Link>
+          
               <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/carousel-control">
                 <MenuItem icon={<FaImage size={16} />} onClick={() => onMenuSelect('Slider')}>
                   Slider
@@ -374,29 +370,10 @@ const MobileSidebar = ({ open, onClose, handleMenuSelect }) => {
               </Link>
               <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/site-title">
                 <MenuItem icon={<FaCopyright size={16} />} onClick={() => onMenuSelect('Site Title')}>
-                  Site Title
+                  Site Control
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/community-websites-link">
-                <MenuItem icon={<FaCopyright size={16} />} onClick={() => onMenuSelect('Community Websites Link')}>
-                  Community Websites Link
-                </MenuItem>
-              </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/brand-ambassador">
-                <MenuItem icon={<FaUsers size={16} />} onClick={() => onMenuSelect('Brand Ambassador')}>
-                  Brand Ambassador
-                </MenuItem>
-              </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/sponsor">
-                <MenuItem icon={<FaUsers size={16} />} onClick={() => onMenuSelect('Sponsor')}>
-                  Sponsor
-                </MenuItem>
-              </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/payment-methods">
-                <MenuItem icon={<FaMoneyCheckAlt size={16} />} onClick={() => onMenuSelect('Payment Methods')}>
-                  Payment Methods
-                </MenuItem>
-              </Link>
+    
             </SubMenu>
 
             <SubMenu label="Deposit" icon={<FaMoneyBillWave size={16} />}>
@@ -410,22 +387,18 @@ const MobileSidebar = ({ open, onClose, handleMenuSelect }) => {
                   Add Promotion
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction">
-                <MenuItem icon={<FaListAlt size={16} />} onClick={() => onMenuSelect('All Deposit Methods')}>
-                  All Deposit Methods
-                </MenuItem>
-              </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction">
+              
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction/filter/pending">
                 <MenuItem icon={<FaCog size={16} />} onClick={() => onMenuSelect('All Deposit Request')}>
                   All Deposit Request
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction/filter/success">
                 <MenuItem icon={<FaUserCheck size={16} />} onClick={() => onMenuSelect('Successful Deposit')}>
                   Successful Deposit
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/deposit-transaction/filter/reject">
                 <MenuItem icon={<FaUserTimes size={16} />} onClick={() => onMenuSelect('Reject Deposit')}>
                   Reject Deposit
                 </MenuItem>
@@ -438,32 +411,28 @@ const MobileSidebar = ({ open, onClose, handleMenuSelect }) => {
             </SubMenu>
 
             <SubMenu label="Withdraw" icon={<FaCashRegister size={16} />}>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/add-withdraw-method">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Add-Withdraw-Methods">
                 <MenuItem icon={<FaPlusCircle size={16} />} onClick={() => onMenuSelect('Add Withdraw Method')}>
                   Add Withdraw Method
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Add-Withdraw-Methods">
-                <MenuItem icon={<FaListAlt size={16} />} onClick={() => onMenuSelect('All Withdraw Methods')}>
-                  All Withdraw Methods
-                </MenuItem>
-              </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction">
+            
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction/filter/pending">
                 <MenuItem icon={<FaCog size={16} />} onClick={() => onMenuSelect('All Withdraw Request')}>
                   All Withdraw Request
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction/filter/success">
                 <MenuItem icon={<FaUserCheck size={16} />} onClick={() => onMenuSelect('Successful Withdraw')}>
                   Successful Withdraw
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction/filter/reject">
                 <MenuItem icon={<FaUserTimes size={16} />} onClick={() => onMenuSelect('Reject Withdraw')}>
                   Reject Withdraw
                 </MenuItem>
               </Link>
-              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction">
+              <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to="/Withdraw-transaction/filter/">
                 <MenuItem icon={<FaHistory size={16} />} onClick={() => onMenuSelect('All Withdraw History')}>
                   All Withdraw History
                 </MenuItem>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { FaEdit, FaTrash, FaSearch, FaEye, FaSync, FaFilter, FaChevronDown } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { baseURL } from '../utils/baseURL';
 
 // Styled Components
@@ -403,6 +403,18 @@ export default function DepositTransaction() {
   const [loading, setLoading] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const navigate = useNavigate();
+   const { filter } = useParams(); // Extract filter parameter from URL
+
+  useEffect(() => {
+    // Set filterStatus based on URL filter parameter
+    if (filter && ['pending', 'success', 'reject'].includes(filter)) {
+      setFilterStatus(filter === 'success' ? 'completed' : filter === 'reject' ? 'failed' : filter);
+    } else {
+      setFilterStatus(''); // No filter, show all transactions
+    }
+    fetchTransactions();
+  }, [filter]);
+
 
   useEffect(() => {
     fetchTransactions();

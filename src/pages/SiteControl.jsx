@@ -537,7 +537,7 @@ const SiteControl = () => {
             </div>
           </GridItem>
           <GridItem highlight>
-            <Label>Sidebar Body Color</Label>
+            <Label>Menu Text Color</Label>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <ColorSwatch color={theme.sidebarBodyColor} />
               <Value>{theme.sidebarBodyColor}</Value>
@@ -668,7 +668,7 @@ const SiteControl = () => {
                     onChange={handleInputChange}
                     style={{ width: '45px', height: '35px', padding: '0' }}
                     required
-                    aria-label="Sidebar body color picker"
+                    aria-label="Menu Text Color picker"
                   />
                   <ColorSwatch color={formData.sidebarBodyColor} />
                 </div>
